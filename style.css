@@ -1,0 +1,75 @@
+.order_section {
+    display: flex;
+    
+}
+
+.food_card {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #FDEADC;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 700px;
+}
+
+.second_card_section{
+  flex: 1;              
+  
+}
+
+#third_card_section {
+  display: flex;
+  margin-left: auto;
+  flex-direction: column;
+
+}
+
+.main_section{
+  width: 100%;
+}
+
+.order_section{
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  margin-left: 50px;
+}
+
+
+.menu{
+  flex: 1;
+  margin-right: 100px;
+}
+
+
+.basket_overlay{
+  flex: 0 0 300px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+
+.basket_content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main_header {
+  background-color: #E76C1F;
+  height: 100px;
+}
+
+.burger_header {
+  height: 20px;
+  background-color: #E76C1F;
+  
+  margin-bottom: 50px;
+}
+
+.shop_introduction {
+margin-left: 50px;
+}

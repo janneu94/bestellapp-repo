@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestellapp</title>
+
+
+    <script src="scripts/db.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/assets.css">
+    <link rel="stylesheet" href="styles/basket.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/standard.css">
+</head>
+
+<body onload="render()">
+    <header class="main_header">
+        <p>Bestell App</p>
+        <p id="menu_button"></p>
+    </header>
+    <main id="main_section" class="main_section">
+        <section class="shop_introduction">
+            <h1>Patty Lab</h1>#
+            <p id="rating">rating 1 von 5 sterne</p>
+        </section>
+
+        <section class="burger_header">
+            <h2>Burger</h2>
+        </section>
+
+        
+        <section id="order_section" class="order_section">
+
+            <section id="menu" class="menu"></section>
+            <section class="basket_overlay">
+                <div class="basket_content">
+                    <h2>Basket</h2>
+                    <div id="basket"></div>
+                    <div id="total"></div>
+                </div>
+            </section>
+
+
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
