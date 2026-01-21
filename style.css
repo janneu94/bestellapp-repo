@@ -1,21 +1,21 @@
 .order_section {
-    display: flex;
-    
+  display: flex;
+
 }
 
 .food_card {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    background-color: #FDEADC;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    width: 700px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #FDEADC;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 700px;
 }
 
-.second_card_section{
-  flex: 1;              
-  
+.second_card_section {
+  flex: 1;
+
 }
 
 #third_card_section {
@@ -25,11 +25,11 @@
 
 }
 
-.main_section{
+.main_section {
   width: 100%;
 }
 
-.order_section{
+.order_section {
   display: flex;
   width: 100%;
   align-items: flex-start;
@@ -37,13 +37,13 @@
 }
 
 
-.menu{
+.menu {
   flex: 1;
   margin-right: 100px;
 }
 
 
-.basket_overlay{
+.basket_overlay {
   flex: 0 0 300px;
   position: sticky;
   top: 20px;
@@ -51,7 +51,7 @@
 }
 
 
-.basket_content{
+.basket_content {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -66,10 +66,36 @@
 .burger_header {
   height: 20px;
   background-color: #E76C1F;
-  
+
   margin-bottom: 50px;
 }
 
 .shop_introduction {
-margin-left: 50px;
+  margin-left: 50px;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: #E76C1F;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_links {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_img_container {
+  background-image: url(assets/img/main_img.png);
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
