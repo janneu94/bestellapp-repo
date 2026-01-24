@@ -23,8 +23,10 @@ function getBasketHTML(index) {
    return `
             <div class="basket_item">
                 <span>${basket[index].name}</span>
+                <div class="basket_numbers">
                 <span>${basket[index].amount}</span>
                 <span>${basket[index].price.toFixed(2)} €</span>
+                </div>           
             </div>
         `
 }

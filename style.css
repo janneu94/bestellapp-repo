@@ -9,6 +9,29 @@
   
 }
 
+.basket_item {
+  
+  gap: 10px;
+  
+  background-color: #FDEADC;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  overflow-x: hidden;
+  
+}
+
+.basket_numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
 #second_card_section {
   padding-left: 20px;
 }
@@ -29,7 +52,8 @@
   display: flex;
   width: 100%;
   align-items: flex-start;
-  margin-left: 50px;
+  padding-left: 50px;
+  box-sizing: border-box;
 }
 
 
@@ -44,6 +68,8 @@
   position: sticky;
   top: 20px;
   align-self: flex-start;
+  background-color: #363534;
+  border-radius: 20px 0 0 20px;
 }
 
 
