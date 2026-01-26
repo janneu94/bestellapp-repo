@@ -11,7 +11,7 @@ function getDishHTML(index){
 
             <section id="third_card_section">
                <p id="price">
-                    ${myDishes[index].price}
+                    ${myDishes[index].price + " €"}
                </p>
                 <button onclick="addToBasket(${index})" class="add-btn"></button>
             </section>
@@ -28,5 +28,5 @@ function getBasketHTML(index) {
                 <span>${basket[index].price.toFixed(2)} €</span>
                 </div>           
             </div>
-        `
+        `;
 }

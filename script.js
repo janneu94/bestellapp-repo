@@ -46,5 +46,5 @@ function renderTotal() {
     }
 
     document.getElementById("total").innerText =
-        total.toFixed(2) + " €";
+        "Total: " + total.toFixed(2) + " €";
 }

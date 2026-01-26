@@ -6,13 +6,13 @@
   margin-bottom: 10px;
   border-radius: 10px;
   width: 700px;
-  
+
 }
 
 .basket_item {
-  
+
   gap: 10px;
-  
+
   background-color: #FDEADC;
   margin-bottom: 10px;
   border-radius: 10px;
@@ -24,7 +24,7 @@
   padding: 20px;
   margin: 20px;
   overflow-x: hidden;
-  
+
 }
 
 .basket_numbers {
@@ -86,7 +86,10 @@
 }
 
 .burger_header {
-  height: 20px;
+  height: 50px;
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
   background-color: #E76C1F;
 
   margin-bottom: 50px;
@@ -134,19 +137,19 @@ footer {
 }
 
 .add-btn {
-    width: 100px;
-    height: 50px;
-    background-image: url("assets/img/add_to_basket.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    cursor: pointer;
-    background-color: #FDEADC;
+  width: 100px;
+  height: 50px;
+  background-image: url("assets/img/add_to_basket.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: #FDEADC;
 }
 
 .add-btn:hover {
-    background-image: url("assets/img/add_to_basket_hover.svg");
+  background-image: url("assets/img/add_to_basket_hover.svg");
 }
 
 #rating {
@@ -160,9 +163,42 @@ footer {
 }
 
 .rating-count {
-  color: #9a9a9a;        
+  color: #9a9a9a;
 }
 
 .highlight {
-  color: #E76C1F;          
+  color: #E76C1F;
+}
+
+.seperator {
+  height: 5px;
+  width: 90%;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #FDEADC;
+  box-sizing: border-box;
+}
+
+#total {
+  color: #FDEADC;
+  margin: 20px;
+}
+
+@media (max-width: 1170px) {
+  .food_card {
+    width: auto;
+  }
+}
+
+@media (max-width: 740px) {
+  .basket_overlay {
+    flex: 0 0 300px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: auto;
+/*align-self: flex-start;
+    background-color: #363534;
+    border-radius: 20px 0 0 20px;*/
+  }
 }
