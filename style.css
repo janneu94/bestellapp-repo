@@ -114,7 +114,6 @@ footer {
   height: 100px;
   width: 100%;
   background-color: #E76C1F;
-  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: center;
@@ -184,6 +183,12 @@ footer {
   margin: 20px;
 }
 
+/* #basket_dialog {
+  width: 300px;
+  height: 500px;
+  background-color: red;
+} */
+
 @media (max-width: 1170px) {
   .food_card {
     width: auto;
@@ -191,14 +196,13 @@ footer {
 }
 
 @media (max-width: 740px) {
-  .basket_overlay {
-    flex: 0 0 300px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    top: auto;
-/*align-self: flex-start;
-    background-color: #363534;
-    border-radius: 20px 0 0 20px;*/
-  }
+
+
+
+
 }
+
+body {
+  overflow-x: hidden;
+}
+

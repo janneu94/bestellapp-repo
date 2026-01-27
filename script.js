@@ -1,3 +1,5 @@
+
+
 let basket = [];
 
 function render(){
@@ -47,4 +49,12 @@ function renderTotal() {
 
     document.getElementById("total").innerText =
         "Total: " + total.toFixed(2) + " €";
+}
+
+
+
+function openDialog(){
+    const dialogRef = document.getElementById("basket_dialog");
+    dialogRef.showModal();
+    
 }
