@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="styles/standard.css">
 </head>
 
-<body onload="render(); openDialog();">
+<body onload="render();">
     <header class="main_header">
         <p>Bestell App</p>
         <p id="menu_button"></p>
@@ -46,23 +46,21 @@
         <section id="order_section" class="order_section">
 
             <section id="menu" class="menu"></section>
-            
 
-                <section class="basket_overlay">
-                    <div class="basket_content">
-                        <h2>Basket</h2>
-                        <div id="basket"></div>
-                        <div class="seperator"></div>
-                        <div id="total"></div>
 
-                    </div>
-                </section>
+            <section class="basket_overlay hide_mobile">
+                <div class="basket_content">
+                    <h2>Basket</h2>
+                    <div id="basket"></div>
+                    <div class="seperator"></div>
+                    <div id="total"></div>
 
-                <dialog id="basket_dialog">
-                    HALLO WELT
-                </dialog>
+                </div>
+            </section>
 
-            
+
+
+
 
 
 
@@ -70,7 +68,7 @@
         </section>
 
     </main>
-    <footer>
+    <footer class="hide_mobile">
         <div class="footer_links">
             <a href="">2026 Burgerhouse</a>
             <a href="">Imprint</a>
@@ -78,6 +76,21 @@
         </div>
 
     </footer>
+
+    <dialog id="basket_dialog">
+        <header></header>
+        <div class="dialog_content">
+            <header>Basket</header>
+            <button class="basket_btn" onclick="closeDialog()">close basket</button>
+        </div>
+    </dialog>
+
+    <div class="mobile_footer show_mobile">
+
+        <button onclick="openDialog()">open basket</button>
+
+    </div>
+
 </body>
 
 </html>

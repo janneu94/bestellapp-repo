@@ -58,3 +58,9 @@ function openDialog(){
     dialogRef.showModal();
     
 }
+
+function closeDialog(){
+    const dialogRef = document.getElementById("basket_dialog");
+    dialogRef.close();
+    
+}
