@@ -2,8 +2,8 @@
 
 let basket = [];
 
-function render(){
-        const menu = document.getElementById("menu");
+function render() {
+    const menu = document.getElementById("menu");
     menu.innerHTML = "";
 
     for (let i = 0; i < myDishes.length; i++) {
@@ -53,14 +53,20 @@ function renderTotal() {
 
 
 
-function openDialog(){
+function openDialog() {
     const dialogRef = document.getElementById("basket_dialog");
     dialogRef.showModal();
-    
+
+    document.getElementById('basket_mobile').innerHTML =
+        document.getElementById('basket').innerHTML;
+
+    document.getElementById('total_mobile').innerHTML =
+        document.getElementById('total').innerHTML;
+
 }
 
-function closeDialog(){
+function closeDialog() {
     const dialogRef = document.getElementById("basket_dialog");
     dialogRef.close();
-    
+
 }

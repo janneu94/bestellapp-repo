@@ -80,6 +80,14 @@
   align-items: flex-start;
 }
 
+.basket_content_mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #363534;
+}
+
 .main_header {
   background-color: #E76C1F;
   height: 100px;
@@ -213,6 +221,10 @@ footer {
     display: block;
   }
 
+  .mobile_footer {
+    display: block !important;
+  }
+
 }
 
 body {
@@ -248,11 +260,72 @@ body {
   cursor: pointer;
 }
 
+#basket_mobile {
+  width: 80%;
+}
+
 .mobile_footer {
   width: 100%;
   height: 50px;
-  background-color: #E76C1F;
+  background-color: #363534;
   position: fixed;
   bottom: 0;
   left: 0;
+  display: none;
+}
+
+#seperator_mobile {
+  height: 5px;
+  width: 90%;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #FDEADC;
+  box-sizing: border-box;
+}
+
+.mobile_btn {
+  width: 30px;
+  height: 30px;
+  
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: #363534;
+}
+
+.m_btn_home {
+  background-image: url("assets/icons/mobile/home.png");
+}
+.m_btn_basket {
+  background-image: url(assets/icons/mobile/shopping_cart.png);
+}
+.m_btn_orders {
+  background-image: url(assets/icons/mobile/takeout_dining.png);
+}
+.m_btn_profile {
+  background-image: url(assets/icons/mobile/person.png);
+}
+
+.m_btn_home:hover {
+  background-image: url("assets/icons/mobile/aktive/home.png");
+}
+
+.m_btn_basket:hover {
+  background-image: url("assets/icons/mobile/aktive/shopping_cart.png");
+}
+
+.m_btn_orders:hover {
+  background-image: url("assets/icons/mobile/aktive/takeout_dining.png");
+}
+
+.m_btn_profile:hover {
+  background-image: url("assets/icons/mobile/aktive/person.png");
+}
+
+.mobile_menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }

@@ -80,14 +80,27 @@
     <dialog id="basket_dialog">
         <header></header>
         <div class="dialog_content">
-            <header>Basket</header>
+
+            <div class="basket_content_mobile">
+                <h2>Basket</h2>
+                <div id="basket_mobile"></div>
+                <div id="seperator_mobile"></div>
+                <div id="total_mobile"></div>
+
+            </div>
+
             <button class="basket_btn" onclick="closeDialog()">close basket</button>
         </div>
     </dialog>
 
     <div class="mobile_footer show_mobile">
+        <div class="mobile_menu">
+            <button onclick="" class="m_btn_home mobile_btn"></button>
+            <button onclick="openDialog()" class="m_btn_basket mobile_btn"></button>
+            <button onclick="" class="m_btn_orders mobile_btn"></button>
+            <button onclick="" class="m_btn_profile mobile_btn"></button>
+        </div>
 
-        <button onclick="openDialog()">open basket</button>
 
     </div>
 
