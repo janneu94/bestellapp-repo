@@ -70,3 +70,10 @@ function closeDialog() {
     dialogRef.close();
 
 }
+
+function showPlus(index) {
+  document.getElementById("plus_btn" + index).classList.add("visible");
+  document.getElementById("add_btn" + index).classList.add("add_btn_clicked");
+  document.getElementById("add_btn" + index).innerHTML =
+        "added " + basket[index].amount;
+}

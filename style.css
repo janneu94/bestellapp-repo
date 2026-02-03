@@ -286,7 +286,7 @@ body {
 .mobile_btn {
   width: 30px;
   height: 30px;
-  
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -298,12 +298,15 @@ body {
 .m_btn_home {
   background-image: url("assets/icons/mobile/home.png");
 }
+
 .m_btn_basket {
   background-image: url(assets/icons/mobile/shopping_cart.png);
 }
+
 .m_btn_orders {
   background-image: url(assets/icons/mobile/takeout_dining.png);
 }
+
 .m_btn_profile {
   background-image: url(assets/icons/mobile/person.png);
 }
@@ -328,4 +331,44 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 10px;
+}
+
+.plus_btn {
+  height: 25px;
+  width: 25px;
+  /* background-image: url(assets/icons/+.png); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 15px;
+  color: #E76C1F;
+  font-weight: bold;
+  display: none;
+}
+
+.add_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.plus_btn.visible {
+  display: block;
+}
+
+.add_btn_clicked {
+  background-image: none;
+  background-color: white;
+  height: 25px;
+  border-radius: 15px;
+  color: #E76C1F;
+  font-weight: bold;
+}
+
+.add_btn_clicked:hover {
+  background-image: none;
 }

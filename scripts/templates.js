@@ -13,8 +13,11 @@ function getDishHTML(index){
                <p id="price">
                     ${myDishes[index].price + " €"}
                </p>
-                <button onclick="addToBasket(${index})" class="add-btn"></button>
-            </section>
+               <div class="add_btn">
+                <button id="add_btn${index}" onclick="addToBasket(${index}); showPlus(${index})" class="add-btn"></button>
+                <button onclick="addToBasket(${index})" id="plus_btn${index}" class="plus_btn" onclick="addToBasket(${index}); showPlus(${index})">+</button>
+                </div>
+                </section>
 
         </div>`;
 }
