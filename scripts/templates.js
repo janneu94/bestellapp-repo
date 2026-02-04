@@ -1,4 +1,4 @@
-function getDishHTML(index){
+function getDishHTML(index) {
     return `        <div id="food_card" class="food_card">
             <section id="second_card_section">
                <h3 id="dish_name">
@@ -15,7 +15,7 @@ function getDishHTML(index){
                </p>
                <div class="add_btn">
                 <button id="add_btn${index}" onclick="addToBasket(${index}); showPlus(${index})" class="add-btn"></button>
-                <button onclick="addToBasket(${index})" id="plus_btn${index}" class="plus_btn" onclick="addToBasket(${index}); showPlus(${index})">+</button>
+                <button onclick="addToBasket(${index}); showPlus(${index})" id="plus_btn${index}" class="plus_btn">+</button>
                 </div>
                 </section>
 
@@ -23,11 +23,15 @@ function getDishHTML(index){
 }
 
 function getBasketHTML(index) {
-   return `
+    return `
             <div class="basket_item">
                 <span>${basket[index].name}</span>
                 <div class="basket_numbers">
+                <div>
+                <button class="reduce_amount_bsk">-</button>
                 <span>${basket[index].amount}</span>
+                <button class="add_amount_bsk" onclick="addToBasket(${index})">+</button>
+                </div>
                 <span>${basket[index].price.toFixed(2)} €</span>
                 </div>           
             </div>

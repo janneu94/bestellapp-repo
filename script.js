@@ -77,3 +77,30 @@ function showPlus(index) {
   document.getElementById("add_btn" + index).innerHTML =
         "added " + basket[index].amount;
 }
+
+function getDishbyID(id) {
+    return myDishes.find(a => a.id === id);
+}
+
+function getBasketIndexbyID(id) {
+    return basket.find(b => b.id === id);
+}
+
+function addToBasket(id) {
+  let basketId = getBasketIndexById(id);
+
+  if (basketId === -1) basket.push({id, amount: 1});
+  else basket[basketId].amount++;
+
+  renderBasket();
+}
+
+function reduceBasket(id) {
+  let basketId = getBasketIndexById(id);
+  if (basketId === -1) return;
+
+  basket[basketId].amount--;
+  if (basket[basketId].amount === 0) basket.splice(basketId, 1);
+
+  renderBasket();
+}

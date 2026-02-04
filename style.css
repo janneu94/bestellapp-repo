@@ -372,3 +372,30 @@ body {
 .add_btn_clicked:hover {
   background-image: none;
 }
+
+.add_amount_bsk {
+  height: 25px;
+  width: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: #FDEADC;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.reduce_amount_bsk {
+  height: 25px;
+  width: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: #FDEADC;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.show_delete_can {
+  background-image: url(assets/icons/+.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
