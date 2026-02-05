@@ -11,44 +11,46 @@ function render() {
     }
 }
 
-function addToBasket(index) {
-    let dish = myDishes[index];
+// function addToBasket(index) {
+//     let dish = myDishes[index];
 
-    let existingDish = basket.find(item => item.name === dish.name);
+//     let existingDish = basket.find(item => item.name === dish.name);
 
-    if (existingDish) {
-        existingDish.amount++;
-    } else {
-        basket.push({
-            name: dish.name,
-            price: dish.price,
-            amount: 1
-        });
-    }
+//     if (existingDish) {
+//         existingDish.amount++;
+//     } else {
+//         basket.push({
+//             name: dish.name,
+//             price: dish.price,
+//             amount: 1
+//         });
+//     }
 
-    renderBasket();
-}
+//     renderBasket();
+// }
 
-function renderBasket() {
-    let basketContainer = document.getElementById("basket");
-    basketContainer.innerHTML = "";
+// function renderBasket() {
+//     let basketContainer = document.getElementById("basket");
+//     basketContainer.innerHTML = "";
 
-    for (let i = 0; i < basket.length; i++) {
-        basketContainer.innerHTML += getBasketHTML(i);
-    }
+//     for (let i = 0; i < basket.length; i++) {
+//         basketContainer.innerHTML += getBasketHTML(i);
+//     }
 
-    renderTotal();
-}
+//     renderTotal();
+// }
 
 function renderTotal() {
-    let total = 0;
+  let total = 0;
 
-    for (let i = 0; i < basket.length; i++) {
-        total += basket[i].price * basket[i].amount;
-    }
+  for (const item of basket) {
+    const dish = getDishById(item.dishId);
+    if (!dish) continue;
+    total += dish.price * item.amount;
+  }
 
-    document.getElementById("total").innerText =
-        "Total: " + total.toFixed(2) + " €";
+  document.getElementById("total").innerText =
+    "Total: " + total.toFixed(2) + " €";
 }
 
 
@@ -71,28 +73,32 @@ function closeDialog() {
 
 }
 
-function showPlus(index) {
-  document.getElementById("plus_btn" + index).classList.add("visible");
-  document.getElementById("add_btn" + index).classList.add("add_btn_clicked");
-  document.getElementById("add_btn" + index).innerHTML =
-        "added " + basket[index].amount;
+function showPlus(dishId) {
+  document.getElementById("plus_btn" + dishId).classList.add("visible");
+  document.getElementById("add_btn" + dishId).classList.add("add_btn_clicked");
+
+  const i = getBasketIndexById(dishId);
+  const amount = i === -1 ? 0 : basket[i].amount;
+
+  document.getElementById("add_btn" + dishId).innerHTML = "added " + amount;
 }
 
-function getDishbyID(id) {
+function getDishById(id) {
     return myDishes.find(a => a.id === id);
 }
 
-function getBasketIndexbyID(id) {
-    return basket.find(b => b.id === id);
+function getBasketIndexById(dishId) {
+    return basket.findIndex(b => b.dishId === dishId);
 }
 
 function addToBasket(id) {
   let basketId = getBasketIndexById(id);
 
-  if (basketId === -1) basket.push({id, amount: 1});
+  if (basketId === -1) basket.push({ dishId: id, amount: 1 });
   else basket[basketId].amount++;
 
   renderBasket();
+  showPlus(id);
 }
 
 function reduceBasket(id) {
@@ -103,4 +109,16 @@ function reduceBasket(id) {
   if (basket[basketId].amount === 0) basket.splice(basketId, 1);
 
   renderBasket();
+}
+
+function renderBasket() {
+    let showBasket = document.getElementById("basket");
+    showBasket.innerHTML ="";
+    
+    for(let basketItem of basket) {
+        let dish = getDishById(basketItem.dishId);
+        showBasket.innerHTML += getBasketHTML(dish,basketItem);
+
+    }
+    renderTotal();
 }

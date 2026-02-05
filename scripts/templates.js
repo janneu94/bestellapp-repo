@@ -14,25 +14,35 @@ function getDishHTML(index) {
                     ${myDishes[index].price + " €"}
                </p>
                <div class="add_btn">
-                <button id="add_btn${index}" onclick="addToBasket(${index}); showPlus(${index})" class="add-btn"></button>
-                <button onclick="addToBasket(${index}); showPlus(${index})" id="plus_btn${index}" class="plus_btn">+</button>
+<button
+  id="add_btn${myDishes[index].id}"
+  onclick="addToBasket(${myDishes[index].id})"
+  class="add-btn">
+</button>
+
+<button
+  id="plus_btn${myDishes[index].id}"
+  onclick="addToBasket(${myDishes[index].id})"
+  class="plus_btn">
+  +
+</button>
                 </div>
                 </section>
 
         </div>`;
 }
 
-function getBasketHTML(index) {
+function getBasketHTML(dish, basketItem) {
     return `
             <div class="basket_item">
-                <span>${basket[index].name}</span>
+                <span>${dish.name}</span>
                 <div class="basket_numbers">
                 <div>
                 <button class="reduce_amount_bsk">-</button>
-                <span>${basket[index].amount}</span>
-                <button class="add_amount_bsk" onclick="addToBasket(${index})">+</button>
+                <span>${basketItem.amount}</span>
+                <button class="add_amount_bsk" onclick="addToBasket(${dish.id})">+</button>
                 </div>
-                <span>${basket[index].price.toFixed(2)} €</span>
+                <span>${(dish.price * basketItem.amount).toFixed(2)} €</span>
                 </div>           
             </div>
         `;
