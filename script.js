@@ -122,3 +122,16 @@ function renderBasket() {
     }
     renderTotal();
 }
+
+function proofAmount(dishId) {
+  const index = getBasketIndexById(dishId);
+  if (index === -1) return;
+
+  const minusBtn = document.getElementById("minus_" + dishId);
+
+  if (basket[index].amount === 1) {
+    minusBtn.classList.add("trash");
+  } else {
+    minusBtn.classList.remove("trash");
+  }
+}
