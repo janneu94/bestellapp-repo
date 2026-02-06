@@ -401,7 +401,7 @@ body {
 }
 
 .trash_icon {
-  background-image: url("assets/img/trash.svg");
+  background-image: url("assets/img/delete_default.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 18px 18px;

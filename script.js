@@ -41,16 +41,16 @@ function render() {
 // }
 
 function renderTotal() {
-  let total = 0;
+    let total = 0;
 
-  for (const item of basket) {
-    const dish = getDishById(item.dishId);
-    if (!dish) continue;
-    total += dish.price * item.amount;
-  }
+    for (const item of basket) {
+        const dish = getDishById(item.dishId);
+        if (!dish) continue;
+        total += dish.price * item.amount;
+    }
 
-  document.getElementById("total").innerText =
-    "Total: " + total.toFixed(2) + " €";
+    document.getElementById("total").innerText =
+        "Total: " + total.toFixed(2) + " €";
 }
 
 
@@ -74,13 +74,13 @@ function closeDialog() {
 }
 
 function showPlus(dishId) {
-  document.getElementById("plus_btn" + dishId).classList.add("visible");
-  document.getElementById("add_btn" + dishId).classList.add("add_btn_clicked");
+    document.getElementById("plus_btn" + dishId).classList.add("visible");
+    document.getElementById("add_btn" + dishId).classList.add("add_btn_clicked");
 
-  const i = getBasketIndexById(dishId);
-  const amount = i === -1 ? 0 : basket[i].amount;
+    const i = getBasketIndexById(dishId);
+    const amount = i === -1 ? 0 : basket[i].amount;
 
-  document.getElementById("add_btn" + dishId).innerHTML = "added " + amount;
+    document.getElementById("add_btn" + dishId).innerHTML = "added " + amount;
 }
 
 function getDishById(id) {
@@ -92,46 +92,52 @@ function getBasketIndexById(dishId) {
 }
 
 function addToBasket(id) {
-  let basketId = getBasketIndexById(id);
+    let basketId = getBasketIndexById(id);
 
-  if (basketId === -1) basket.push({ dishId: id, amount: 1 });
-  else basket[basketId].amount++;
+    if (basketId === -1) basket.push({ dishId: id, amount: 1 });
+    else basket[basketId].amount++;
 
-  renderBasket();
-  showPlus(id);
+    renderBasket();
+    showPlus(id);
 }
 
 function reduceBasket(id) {
-  let basketId = getBasketIndexById(id);
-  if (basketId === -1) return;
+    let basketId = getBasketIndexById(id);
+    if (basketId === -1) return;
 
-  basket[basketId].amount--;
-  if (basket[basketId].amount === 0) basket.splice(basketId, 1);
+    basket[basketId].amount--;
+    if (basket[basketId].amount === 0) basket.splice(basketId, 1);
 
-  renderBasket();
+    renderBasket();
 }
 
 function renderBasket() {
     let showBasket = document.getElementById("basket");
-    showBasket.innerHTML ="";
-    
-    for(let basketItem of basket) {
+    showBasket.innerHTML = "";
+
+    for (let basketItem of basket) {
         let dish = getDishById(basketItem.dishId);
-        showBasket.innerHTML += getBasketHTML(dish,basketItem);
+        showBasket.innerHTML += getBasketHTML(dish, basketItem);
 
     }
+
+    for (const basketItem of basket) {
+        proofAmount(basketItem.dishId);
+    }
+
     renderTotal();
 }
 
 function proofAmount(dishId) {
-  const index = getBasketIndexById(dishId);
-  if (index === -1) return;
+    let index = getBasketIndexById(dishId);
+    if (index === -1) return;
 
-  const minusBtn = document.getElementById("minus_" + dishId);
+    let minusBtn = document.getElementById("minus_" + dishId);
+    if (!minusBtn) return;
 
-  if (basket[index].amount === 1) {
-    minusBtn.classList.add("trash");
-  } else {
-    minusBtn.classList.remove("trash");
-  }
+    if (basket[index].amount === 1) {
+        minusBtn.classList.add("trash");
+    } else {
+        minusBtn.classList.remove("trash");
+    }
 }
