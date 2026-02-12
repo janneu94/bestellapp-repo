@@ -30,6 +30,7 @@
 .basket_numbers {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #second_card_section {
@@ -225,6 +226,49 @@ footer {
     display: block !important;
   }
 
+  .basket_overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 50px;                
+    height: calc(80vh - 50px);
+    top: auto;
+    border-radius: 0;
+
+        display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;      
+    overflow-x: hidden;
+    
+  }
+
+    .basket_content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  #basket {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;           
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .basket_item {
+    width: auto;                 
+    padding: 12px 84px;             
+    box-sizing: border-box;       
+    overflow-x: hidden;           
+  }
+
+  
+  #total{
+    margin-top: auto;
+  }
+
 }
 
 body {
@@ -406,4 +450,18 @@ body {
   background-position: center;
   background-size: 18px 18px;
   background-color: #FDEADC;
+}
+
+
+#basket::-webkit-scrollbar {
+  width: 6px;
+}
+
+#basket::-webkit-scrollbar-thumb {
+  background-color: #363534;
+}
+
+.number_interface_bucket {
+  display: flex;
+  align-items: center;
 }

@@ -83,6 +83,23 @@ function showPlus(dishId) {
     document.getElementById("add_btn" + dishId).innerHTML = "added " + amount;
 }
 
+function showMinus(dishId) {
+  const i = getBasketIndexById(dishId);
+
+  const addBtn = document.getElementById("add_btn" + dishId);
+  const plusBtn = document.getElementById("plus_btn" + dishId);
+
+  if (!addBtn || !plusBtn) return;
+
+  if (i == -1) {
+    plusBtn.classList.remove("visible");
+    addBtn.classList.remove("add_btn_clicked");
+    addBtn.innerHTML = "";
+  } else {
+    addBtn.innerHTML = "added " + basket[i].amount;
+  }
+}
+
 function getDishById(id) {
     return myDishes.find(a => a.id === id);
 }
@@ -109,6 +126,7 @@ function reduceBasket(id) {
     if (basket[basketId].amount === 0) basket.splice(basketId, 1);
 
     renderBasket();
+    showMinus(id);
 }
 
 function renderBasket() {
@@ -132,12 +150,14 @@ function proofAmount(dishId) {
     let index = getBasketIndexById(dishId);
     if (index === -1) return;
 
-    let minusBtn = document.getElementById("minus_" + dishId);
+    let minusBtn = document.getElementById("minus_btn_" + dishId);
     if (!minusBtn) return;
 
     if (basket[index].amount === 1) {
-        minusBtn.classList.add("trash");
+        minusBtn.classList.add("trash_icon");
+        minusBtn.innerHTML = "";
     } else {
-        minusBtn.classList.remove("trash");
+        minusBtn.classList.remove("trash_icon");
+         minusBtn.innerHTML = "-";
     }
 }
