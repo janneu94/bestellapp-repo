@@ -47,3 +47,12 @@ function getBasketHTML(dish, basketItem) {
             </div>
         `;
 }
+
+function getEmptyBasketHTML() {
+  return `
+    <div class="empty_basket">
+      <div>Nothing here yet.<br>Go ahead and choose something delicious!</div>
+      <div class="empty_icon">🛒</div>
+    </div>
+  `;
+}

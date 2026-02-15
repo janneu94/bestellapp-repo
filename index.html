@@ -18,13 +18,17 @@
     <link rel="stylesheet" href="styles/standard.css">
 </head>
 
-<body onload="render();">
+<body onload="init();">
     <header class="main_header">
         <p>Bestell App</p>
         <p id="menu_button"></p>
     </header>
     <main id="main_section" class="main_section">
-        <div class="main_img_container"></div>
+        <div class="main_img_container">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="logo">
+            </div>
+        </div>
         <section class="shop_introduction">
             <div class="shop_name">
                 <h1><span class="highlight">Patty</span>Lab</h1>
@@ -50,10 +54,14 @@
 
             <section class="basket_overlay">
                 <div class="basket_content">
-                    <h2>Basket</h2>
+                    <h2>Your Basket</h2>
                     <div id="basket"></div>
                     <div class="seperator"></div>
-                    <div id="total"></div>
+                    <div id="total">Total: 0,00 €</div>
+
+                    <button id="buy_btn" class="buy_btn" onclick="buyNow()">
+                        Buy now
+                    </button>
 
                 </div>
             </section>
@@ -96,7 +104,7 @@
     <div class="mobile_footer show_mobile">
         <div class="mobile_menu">
             <button onclick="" class="m_btn_home mobile_btn"></button>
-            <button onclick="openDialog()" class="m_btn_basket mobile_btn"></button>
+            <button onclick="toggleBasket()" class="m_btn_basket mobile_btn"></button>
             <button onclick="" class="m_btn_orders mobile_btn"></button>
             <button onclick="" class="m_btn_profile mobile_btn"></button>
         </div>
@@ -107,4 +115,3 @@
 </body>
 
 </html>
-

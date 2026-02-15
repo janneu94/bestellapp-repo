@@ -2,6 +2,11 @@
 
 let basket = [];
 
+function init() {
+  render();
+  renderBasket();  // ← DAS ist wichtig
+}
+
 function render() {
     const menu = document.getElementById("menu");
     menu.innerHTML = "";
@@ -55,17 +60,17 @@ function renderTotal() {
 
 
 
-function openDialog() {
-    const dialogRef = document.getElementById("basket_dialog");
-    dialogRef.showModal();
+// function openDialog() {
+//     const dialogRef = document.getElementById("basket_dialog");
+//     dialogRef.showModal();
 
-    document.getElementById('basket_mobile').innerHTML =
-        document.getElementById('basket').innerHTML;
+//     document.getElementById('basket_mobile').innerHTML =
+//         document.getElementById('basket').innerHTML;
 
-    document.getElementById('total_mobile').innerHTML =
-        document.getElementById('total').innerHTML;
+//     document.getElementById('total_mobile').innerHTML =
+//         document.getElementById('total').innerHTML;
 
-}
+// }
 
 function closeDialog() {
     const dialogRef = document.getElementById("basket_dialog");
@@ -130,20 +135,25 @@ function reduceBasket(id) {
 }
 
 function renderBasket() {
-    let showBasket = document.getElementById("basket");
-    showBasket.innerHTML = "";
+  let showBasket = document.getElementById("basket");
+  showBasket.innerHTML = "";
 
-    for (let basketItem of basket) {
-        let dish = getDishById(basketItem.dishId);
-        showBasket.innerHTML += getBasketHTML(dish, basketItem);
-
-    }
-
-    for (const basketItem of basket) {
-        proofAmount(basketItem.dishId);
-    }
-
+  if (basket.length === 0) {
+    showBasket.innerHTML = getEmptyBasketHTML();
     renderTotal();
+    return;
+  }
+
+  for (let basketItem of basket) {
+    let dish = getDishById(basketItem.dishId);
+    showBasket.innerHTML += getBasketHTML(dish, basketItem);
+  }
+
+  for (const basketItem of basket) {
+    proofAmount(basketItem.dishId);
+  }
+
+  renderTotal();
 }
 
 function proofAmount(dishId) {
@@ -160,4 +170,9 @@ function proofAmount(dishId) {
         minusBtn.classList.remove("trash_icon");
          minusBtn.innerHTML = "-";
     }
+}
+
+function toggleBasket() {
+  document.querySelector(".basket_overlay").classList.toggle("open");
+  document.querySelector(".m_btn_basket").classList.toggle("active");
 }

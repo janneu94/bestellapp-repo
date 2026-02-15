@@ -105,6 +105,7 @@
 }
 
 .shop_introduction {
+  margin-top: 100px;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
@@ -230,42 +231,46 @@ footer {
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 50px;                
+    bottom: 50px;
     height: calc(80vh - 50px);
     top: auto;
     border-radius: 0;
 
-        display: flex;
+    display: flex;
     flex-direction: column;
 
-    overflow-y: auto;      
+    overflow-y: auto;
     overflow-x: hidden;
-    
+
+      height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+
   }
 
-    .basket_content{
+  .basket_content {
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  
+
   #basket {
     flex: 1;
     overflow-y: auto;
-    overflow-x: hidden;           
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
 
   .basket_item {
-    width: auto;                 
-    padding: 12px 84px;             
-    box-sizing: border-box;       
-    overflow-x: hidden;           
+    width: auto;
+    padding: 12px 84px;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
-  
-  #total{
+
+  #total {
     margin-top: auto;
   }
 
@@ -464,4 +469,58 @@ body {
 .number_interface_bucket {
   display: flex;
   align-items: center;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  transform: translateX(-50%);
+}
+
+.logo img {
+  height: 200px;
+  width: 200px;
+}
+
+.open {
+  height: calc(80vh - 50px);
+}
+
+.active {
+  background-image: url("assets/icons/mobile/aktive/shopping_cart.png");
+}
+
+.buy_btn {
+  width: 90%;
+  height: 55px;
+  border: none;
+  border-radius: 30px;
+  background-color: #E76C1F;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.buy_btn:active {
+  transform: scale(0.97);
+}
+
+.empty_basket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FDEADC;
+  font-size: 24px;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  margin-left: 30%;
+  color: #FDEADC;
 }
