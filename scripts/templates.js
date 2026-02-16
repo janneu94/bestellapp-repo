@@ -10,7 +10,7 @@ function getDishHTML(index) {
             </section>
 
             <section id="third_card_section">
-               <p id="price">
+               <p class="price">
                     ${myDishes[index].price + " €"}
                </p>
                <div class="add_btn">
@@ -52,7 +52,7 @@ function getEmptyBasketHTML() {
   return `
     <div class="empty_basket">
       <div>Nothing here yet.<br>Go ahead and choose something delicious!</div>
-      <div class="empty_icon">🛒</div>
+      <div class="empty_icon"><img src="assets/img/empty_basket_cart.png" alt="empty_basket_cart"></div>
     </div>
   `;
 }
