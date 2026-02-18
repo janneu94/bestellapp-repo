@@ -52,7 +52,6 @@
 .order_section {
   display: flex;
   width: 100%;
-  /* align-items: flex-start; */
   padding-left: 50px;
   box-sizing: border-box;
 }
@@ -211,12 +210,6 @@ footer {
   margin: 20px;
 }
 
-/* #basket_dialog {
-  width: 300px;
-  height: 500px;
-  background-color: red;
-} */
-
 @media (max-width: 1170px) {
   .food_card {
     width: auto;
@@ -298,23 +291,6 @@ footer {
 
 body {
   overflow-x: hidden;
-}
-
-#basket_dialog {
-  padding: 0;
-  border: none;
-  max-width: none;
-  background: transparent;
-}
-
-.dialog_content {
-  border: none;
-  height: 50vh;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: white;
 }
 
 .basket_btn {
@@ -405,7 +381,6 @@ body {
 .plus_btn {
   height: 25px;
   width: 25px;
-  /* background-image: url(assets/icons/+.png); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -561,4 +536,38 @@ body {
 .price {
   display: flex;
   justify-content: flex-end;
+}
+
+.order_confirmed {
+background-color: #363534;
+border-radius: 16px;
+}
+
+.order_confirmed_content {
+  flex-direction: column;
+  align-items: center;
+  
+  height: 150px;
+  width: 250px;
+  
+  color: #FDEADC;
+  display: flex;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.order_confirmed img {
+  height: 20px;
+  width: 20px;
+}
+
+.close_btn {
+  background-image: url(assets/img/close.png);
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #363534;
+  border: none;
+  align-self: flex-end;
 }
