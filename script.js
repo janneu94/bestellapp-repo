@@ -25,8 +25,7 @@ function renderTotal() {
     total += dish.price * item.amount;
   }
 
-  document.getElementById("total").innerText =
-    "Total: " + total.toFixed(2) + " €";
+  document.getElementById("total").innerText = "Total: " + total.toFixed(2) + " €";
 }
 
 function showPlus(dishId) {
@@ -49,7 +48,6 @@ function showPlus(dishId) {
 
 function showMinus(dishId) {
   const i = getBasketIndexById(dishId);
-
   const addBtn = document.getElementById("add_btn" + dishId);
   const plusBtn = document.getElementById("plus_btn" + dishId);
 
@@ -140,11 +138,13 @@ function buyNow() {
   basket = [];
   renderBasket();
   resetAddButtons();
+  
   let basketOverlay = document.querySelector(".basket_overlay");
   let mobileBtn = document.querySelector(".m_btn_basket");
 
   basketOverlay.classList.remove("open");
   mobileBtn.classList.remove("active");
+
   let dialog = document.getElementById("order_confirmed");
   dialog.showModal();
 }

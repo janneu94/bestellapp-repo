@@ -6,31 +6,6 @@
   margin-bottom: 10px;
   border-radius: 10px;
   width: 700px;
-
-}
-
-.basket_item {
-
-  gap: 10px;
-
-  background-color: #FDEADC;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  width: 100%;
-  min-height: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px;
-  margin: 20px;
-  overflow-x: hidden;
-
-}
-
-.basket_numbers {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 #second_card_section {
@@ -42,7 +17,6 @@
   margin-left: auto;
   flex-direction: column;
   padding-right: 20px;
-
 }
 
 .main_section {
@@ -60,36 +34,9 @@
   max-width: 1440px;
 }
 
-
 .menu {
   flex: 1;
   margin-right: 100px;
-}
-
-
-.basket_overlay {
-  flex: 0 0 300px;
-  position: sticky;
-  top: 20px;
-  align-self: flex-start;
-  background-color: #363534;
-  border-radius: 20px 0 0 20px;
-}
-
-
-.basket_content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.basket_content_mobile {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #363534;
 }
 
 .main_header {
@@ -145,16 +92,6 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
-}
-
-footer {
-  height: 100px;
-  width: 100%;
-  background-color: #E76C1F;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer_links {
@@ -229,113 +166,6 @@ footer {
 #total {
   color: #FDEADC;
   margin: 20px;
-}
-
-@media (max-width: 1170px) {
-  .food_card {
-    width: auto;
-  }
-}
-
-@media (max-width: 740px) {
-
-  .hide_mobile {
-    display: none;
-  }
-
-  .menu {
-    margin: 0;
-  }
-
-  .order_section {
-    flex-direction: column;
-    margin-bottom: 50px;
-    padding-right: 50px;
-  }
-
-  .show_mobile {
-    display: block;
-  }
-
-  .mobile_footer {
-    display: block !important;
-  }
-
-  .basket_overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    height: calc(80vh - 50px);
-    top: auto;
-    border-radius: 0;
-
-    display: flex;
-    flex-direction: column;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    height: 0;
-    overflow: hidden;
-    transition: height 0.3s ease;
-
-  }
-
-  .basket_content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-
-  #basket {
-    flex: 1;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .basket_item {
-    width: auto;
-    padding: 12px 84px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-
-  #total {
-    margin-top: auto;
-  }
-
-}
-
-@media (max-width: 420px) {
-
-.food_card {
-  flex-direction: column;
-}
-
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.basket_btn {
-  background-color: #E76C1F;
-  border: none;
-  border-radius: 0;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  cursor: pointer;
-}
-
-#basket_mobile {
-  width: 80%;
 }
 
 .mobile_footer {
@@ -483,20 +313,6 @@ body {
   background-color: #FDEADC;
 }
 
-
-#basket::-webkit-scrollbar {
-  width: 6px;
-}
-
-#basket::-webkit-scrollbar-thumb {
-  background-color: #363534;
-}
-
-.number_interface_bucket {
-  display: flex;
-  align-items: center;
-}
-
 .logo {
   position: absolute;
   left: 50%;
@@ -507,10 +323,6 @@ body {
 .logo img {
   height: 200px;
   width: 200px;
-}
-
-.open {
-  height: calc(80vh - 50px);
 }
 
 .active {
@@ -537,22 +349,6 @@ body {
   transform: scale(0.97);
 }
 
-.empty_basket {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #FDEADC;
-  font-size: 24px;
-  text-align: center;
-  margin-left: 25px;
-}
-
-.basket_header {
-  text-align: center;
-  margin-left: 35%;
-  color: #FDEADC;
-}
-
 .empty_icon {
   margin: 25px;
 }
@@ -575,10 +371,8 @@ body {
 .order_confirmed_content {
   flex-direction: column;
   align-items: center;
-
   height: 150px;
   width: 250px;
-
   color: #FDEADC;
   display: flex;
   padding: 8px;

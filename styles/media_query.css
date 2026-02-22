@@ -1,0 +1,79 @@
+@media (max-width: 1170px) {
+  .food_card {
+    width: auto;
+  }
+}
+
+@media (max-width: 740px) {
+
+  .hide_mobile {
+    display: none;
+  }
+
+  .menu {
+    margin: 0;
+  }
+
+  .order_section {
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding-right: 50px;
+  }
+
+  .show_mobile {
+    display: block;
+  }
+
+  .mobile_footer {
+    display: block !important;
+  }
+
+  .basket_overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    height: calc(80vh - 50px);
+    top: auto;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  .basket_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #basket {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .basket_item {
+    width: auto;
+    padding: 12px 84px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  #total {
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .food_card {
+    flex-direction: column;
+  }
+
+}

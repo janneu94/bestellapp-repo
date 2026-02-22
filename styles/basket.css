@@ -1,0 +1,93 @@
+.empty_basket {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FDEADC;
+  font-size: 24px;
+  text-align: center;
+  margin-left: 25px;
+}
+
+.basket_header {
+  text-align: center;
+  margin-left: 35%;
+  color: #FDEADC;
+}
+
+.basket_item {
+  gap: 10px;
+  background-color: #FDEADC;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px;
+  overflow-x: hidden;
+}
+
+.basket_numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basket_overlay {
+  flex: 0 0 300px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  background-color: #363534;
+  border-radius: 20px 0 0 20px;
+}
+
+.basket_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.basket_content_mobile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #363534;
+}
+
+.basket_btn {
+  background-color: #E76C1F;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+#basket_mobile {
+  width: 80%;
+}
+
+#basket::-webkit-scrollbar {
+  width: 6px;
+}
+
+#basket::-webkit-scrollbar-thumb {
+  background-color: #363534;
+}
+
+.number_interface_basket {
+  display: flex;
+  align-items: center;
+}
+
+.basket_overlay.open {
+  height: calc(80vh - 50px);
+}

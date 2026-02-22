@@ -1,3 +1,14 @@
 body {
   margin: 0;
+  overflow-x: hidden;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: #E76C1F;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
