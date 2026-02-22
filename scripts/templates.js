@@ -17,7 +17,7 @@ function getDishHTML(index) {
 <button
   id="add_btn${myDishes[index].id}"
   onclick="addToBasket(${myDishes[index].id})"
-  class="add-btn">
+  class="content_add_btn">
 </button>
 
 <button
