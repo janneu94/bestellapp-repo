@@ -394,3 +394,7 @@
   border: none;
   align-self: flex-end;
 }
+
+.no-scroll {
+  overflow: hidden;
+}

@@ -8,7 +8,7 @@ function init() {
 }
 
 function render() {
-  const menu = document.getElementById("menu");
+  let menu = document.getElementById("menu");
   menu.innerHTML = "";
 
   for (let i = 0; i < myDishes.length; i++) {
@@ -19,8 +19,8 @@ function render() {
 function renderTotal() {
   let total = 0;
 
-  for (const item of basket) {
-    const dish = getDishById(item.dishId);
+  for (let item of basket) {
+    let dish = getDishById(item.dishId);
     if (!dish) continue;
     total += dish.price * item.amount;
   }
@@ -47,9 +47,9 @@ function showPlus(dishId) {
 
 
 function showMinus(dishId) {
-  const i = getBasketIndexById(dishId);
-  const addBtn = document.getElementById("add_btn" + dishId);
-  const plusBtn = document.getElementById("plus_btn" + dishId);
+  let i = getBasketIndexById(dishId);
+  let addBtn = document.getElementById("add_btn" + dishId);
+  let plusBtn = document.getElementById("plus_btn" + dishId);
 
   if (!addBtn || !plusBtn) return;
 
@@ -95,22 +95,40 @@ function renderBasket() {
   let showBasket = document.getElementById("basket");
   showBasket.innerHTML = "";
 
-  if (basket.length === 0) {
+  let isEmpty = basket.length === 0;
+
+  toggleBasketUI(isEmpty);
+
+  if (isEmpty) {
     showBasket.innerHTML = getEmptyBasketHTML();
-    renderTotal();
-    return;
-  }
-
-  for (let basketItem of basket) {
-    let dish = getDishById(basketItem.dishId);
-    showBasket.innerHTML += getBasketHTML(dish, basketItem);
-  }
-
-  for (const basketItem of basket) {
-    proofAmount(basketItem.dishId);
+  } else {
+    renderBasketItems(showBasket);
   }
 
   renderTotal();
+}
+
+function toggleBasketUI(isEmpty) {
+  let buyBtn = document.getElementById("buy_btn");
+  let separator = document.querySelector(".seperator");
+  let total = document.getElementById("total");
+
+  let display = isEmpty ? "none" : "block";
+
+  buyBtn.style.display = display;
+  separator.style.display = display;
+  total.style.display = display;
+}
+
+function renderBasketItems(container) {
+  for (let basketItem of basket) {
+    let dish = getDishById(basketItem.dishId);
+    container.innerHTML += getBasketHTML(dish, basketItem);
+  }
+
+  for (let basketItem of basket) {
+    proofAmount(basketItem.dishId);
+  }
 }
 
 function proofAmount(dishId) {
@@ -130,8 +148,14 @@ function proofAmount(dishId) {
 }
 
 function toggleBasket() {
-  document.querySelector(".basket_overlay").classList.toggle("open");
-  document.querySelector(".m_btn_basket").classList.toggle("active");
+  const overlay = document.querySelector(".basket_overlay");
+  const mobileBtn = document.querySelector(".m_btn_basket");
+
+  overlay.classList.toggle("open");
+  mobileBtn.classList.toggle("active");
+
+  const isOpen = overlay.classList.contains("open");
+  document.body.classList.toggle("no-scroll", isOpen);
 }
 
 function buyNow() {

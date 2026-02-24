@@ -33,16 +33,20 @@
     left: 0;
     right: 0;
     bottom: 50px;
-    height: calc(80vh - 50px);
     top: auto;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
+    border-radius: 20px 20px 0px 0px;
+
     height: 0;
     overflow: hidden;
     transition: height 0.3s ease;
+  }
+
+  .basket_overlay.open {
+    height: calc(80vh - 50px);
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 36px;
   }
 
   .basket_content {
