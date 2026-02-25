@@ -8,11 +8,22 @@ function init() {
 }
 
 function render() {
-  let menu = document.getElementById("menu");
-  menu.innerHTML = "";
-
+  let burgerEl = document.getElementById("burger");
+  let pizzaEl = document.getElementById("pizza");
+  let saladEl = document.getElementById("salad");
+  burgerEl.innerHTML = "";
+  pizzaEl.innerHTML = "";
+  saladEl.innerHTML = "";
   for (let i = 0; i < myDishes.length; i++) {
-    menu.innerHTML += getDishHTML(i);
+    let dish = myDishes[i];
+
+    if (dish.category === "burger") {
+      burgerEl.innerHTML += getDishHTML(i);
+    } else if (dish.category === "pizza") {
+      pizzaEl.innerHTML += getDishHTML(i);
+    } else if (dish.category === "salad") {
+      saladEl.innerHTML += getDishHTML(i);
+    }
   }
 }
 
