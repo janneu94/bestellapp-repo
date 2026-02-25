@@ -162,7 +162,7 @@ function buyNow() {
   basket = [];
   renderBasket();
   resetAddButtons();
-  
+
   let basketOverlay = document.querySelector(".basket_overlay");
   let mobileBtn = document.querySelector(".m_btn_basket");
 
@@ -190,3 +190,18 @@ function resetAddButtons() {
     btn.classList.remove("visible");
   });
 }
+
+function scrollBehavior() {
+  let scrollY = window.scrollY;
+  let startPosition = 480;
+  let newPosition = startPosition - scrollY;
+
+  if (newPosition < 0) {
+    newPosition = 0;
+  }
+
+  let basket = document.querySelector(".test_basket");
+  basket.style.transform = "translateY(" + newPosition + "px)";
+}
+
+window.addEventListener("scroll", scrollBehavior);
