@@ -156,7 +156,7 @@
 
 .seperator {
   height: 5px;
-  width: 90%;
+  width: 100%;
   margin: 20px;
   border-radius: 10px;
   background-color: #FDEADC;
@@ -404,17 +404,5 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 4px;
-  background-color: #E76C1F;
-}
-
-.test_basket {
-  position: fixed;
-  right: 100px; 
-  width: 200px;
-  height: 200px;
-  background: #363534;
-  top: 200px;               
-  transform: translateY(480px);
-  transition: transform 0.05s linear;
+  width: 400px;
 }

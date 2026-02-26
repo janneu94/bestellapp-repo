@@ -29,111 +29,55 @@ let myDishes = [
   },
   {
     id: 4,
-    category: "burger",
-    name: "Spicy Smash",
-    price: 11.20,
-    description: "Smashed Beef Patty, Jalapeños, Pepper Jack Cheese und scharfe Chili-Mayo."
-  },
-  {
-    id: 5,
-    category: "burger",
-    name: "Blue Cheese Deluxe",
-    price: 12.70,
-    description: "Beef Patty, cremiger Blue Cheese, Röstzwiebeln und feine Knoblauch-Aioli."
-  },
-  {
-    id: 6,
-    category: "burger",
-    name: "Chicken Crunch",
-    price: 10.90,
-    description: "Knuspriges Buttermilk-Chicken, Coleslaw und Honey-Mustard-Sauce."
-  },
-  {
-    id: 7,
-    category: "burger",
-    name: "Mushroom Melt",
-    price: 11.80,
-    description: "Beef Patty, gebratene Champignons, geschmolzener Emmentaler und Kräuter-Mayo."
-  },
-  {
-    id: 8,
-    category: "burger",
-    name: "Hot Honey Burger",
-    price: 12.30,
-    description: "Beef Patty, Chili-Honig, Cheddar, Pickles und rauchige Haus-Sauce."
-  },
-  {
-    id: 9,
-    category: "burger",
-    name: "Double Trouble",
-    price: 14.90,
-    description: "Doppelte Beef Patties, extra Cheddar, Bacon und klassische Smash-Sauce."
-  },
-  {
-    id: 10,
-    category: "burger",
-    name: "Mediterranean Veggie",
-    price: 10.80,
-    description: "Gemüse-Patty, gegrillte Paprika, Feta, Rucola und Joghurt-Kräuter-Sauce."
-  },
-  {
-    id: 11,
-    category: "burger",
-    name: "Cheese Overload",
-    price: 13.20,
-    description: "Beef Patty, Cheddar, Gouda, Mozzarella und cremige Käse-Sauce."
-  },
-  {
-    id: 12,
     category: "pizza",
     name: "Pizza Margherita",
     price: 11.90,
     description: "Tomatensauce, Mozzarella."
   },
   {
-    id: 13,
+    id: 5,
     category: "pizza",
     name: "Pizza Chorizo",
     price: 13.90,
     description: "Tomatenscheiben, Mozzarella und Chorizo."
   },
   {
-    id: 14,
+    id: 6,
     category: "pizza",
     name: "Funghi",
     price: 12.90,
     description: "Rote Zwiebeln, Oliven, Champignons und Mozzarella."
   },
   {
-    id: 15,
+    id: 7,
     category: "pizza",
     name: "Quattro Formaggi mit Chicken",
     price: 15.90,
     description: "Chicken, Mozzarella, Gorgonzola, Fontina und Parmigiano Reggiano."
   },
   {
-    id: 16,
+    id: 8,
     category: "salad",
     name: "Warmer Rind-Rucola-Salat",
     price: 16.90,
     description: "Rind, Rucola, Salatmix, Feta, Cherrytomaten, getrocknete Tomaten und Balsamico-Dressing."
   },
   {
-    id: 17,
+    id: 9,
     category: "salad",
     name: "Mini Grüner Salat",
     price: 7.90,
     description: "Grüner Salat, Gurke, Karotten, Petersilie und Radieschen."
   },
   {
-    id: 18,
+    id: 10,
     category: "salad",
     name: "Grüner Salat mit Meeresfrüchten",
     price: 16.90,
     description: "Salatmix, Cherrytomaten, rote Zwiebel, Muscheln, Tintenfischringe, Garnelen und Dijon-Zitronen-Dressing."
   },
   {
-    id: 19,
+    id: 11,
     category: "salad",
     name: "Veganer Grüner Salat mit Tofu",
     price: 14.90,

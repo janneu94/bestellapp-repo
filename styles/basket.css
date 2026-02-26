@@ -18,7 +18,7 @@
   background-color: #FDEADC;
   margin-bottom: 10px;
   border-radius: 10px;
-  width: 100%;
+  width: 300px;
   min-height: 50px;
   display: flex;
   flex-direction: column;
@@ -40,14 +40,15 @@
   align-self: flex-start;
   background-color: #363534;
   border-radius: 20px 0 0 20px;
-  height: auto;          
-  overflow: visible;     
+  height: auto;
+  overflow: visible;
   display: flex;
   justify-content: center;
+  max-height: calc(700px);
 }
 
 .basket_content {
-  width: 240px;
+  width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,6 +73,13 @@
   bottom: 0;
   left: 0;
   cursor: pointer;
+}
+
+#basket {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 350px;
 }
 
 #basket_mobile {

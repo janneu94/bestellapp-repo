@@ -211,7 +211,7 @@ function scrollBehavior() {
     newPosition = 0;
   }
 
-  let basket = document.querySelector(".test_basket");
+  let basket = document.querySelector(".basket_overlay");
   basket.style.transform = "translateY(" + newPosition + "px)";
 }
 
