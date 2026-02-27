@@ -37,6 +37,7 @@
 .menu {
   flex: 1;
   margin-right: 100px;
+  display: flex;
 }
 
 .main_header {
@@ -62,20 +63,26 @@
   margin: 35px;
 }
 
-.burger_header {
+.menu_seperator {
   height: 50px;
   padding-left: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #E76C1F;
+  margin-top: 36px;
   margin-bottom: 50px;
   width: 100%;
+  color: white;
 }
 
-.burger_header_content {
+.menu_seperator_content {
   width: 100%;
   max-width: 1440px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding-left: 64px;
 }
 
 .shop_introduction {
@@ -405,4 +412,8 @@
   right: 0;
   bottom: 0;
   width: 400px;
+}
+
+.dish_img {
+  padding: 10px;
 }

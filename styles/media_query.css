@@ -1,9 +1,3 @@
-/* @media (max-width: 1170px) {
-  .food_card {
-    width: auto;
-  }
-} */
-
 @media (max-width: 740px) {
 
   .hide_mobile {
@@ -69,15 +63,40 @@
     overflow-x: hidden;
   }
 
+  .food_card {
+    width: 700px;
+    margin-right: 0;
+    flex-direction: row !important;
+  }
+
   #total {
     margin-top: auto;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 580px) {
 
+  .food_card {
+    flex-direction: column !important;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .right_column {
+    right: calc((100vw - 1440px) / 2);
+  }
+}
+
+@media (max-width: 1180px) {
+  .food_card {
+    width: auto;
+    margin-right: 350px;
+  }
+}
+
+@media (max-width: 1180px) {
   .food_card {
     flex-direction: column;
   }
-
 }

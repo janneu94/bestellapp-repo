@@ -5,6 +5,7 @@ let basket = [];
 function init() {
   render();
   renderBasket();
+  scrollBehavior();
 }
 
 function render() {

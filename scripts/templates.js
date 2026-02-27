@@ -1,6 +1,9 @@
 function getDishHTML(index) {
   return `        
   <div id="food_card" class="food_card">
+            <section>
+            <img class="dish_img" src="${myDishes[index].image}" alt="${myDishes[index].name}">
+            </section>
             <section id="second_card_section">
                <h3 id="dish_name">
                    ${myDishes[index].name}
