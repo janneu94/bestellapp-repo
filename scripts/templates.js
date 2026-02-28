@@ -42,7 +42,7 @@ function getBasketHTML(dish, basketItem) {
                 <span>${dish.name}</span>
                 <div class="basket_numbers">
                 <div class="number_interface_basket">
-                <button id="minus_btn_${dish.id}" class="reduce_amount_bsk" onclick="reduceBasket(${dish.id})">-</button>
+                <button id="minus_btn_${dish.id}" class="reduce_amount_bsk" onclick="decreaseDishAmount(${dish.id})">-</button>
                 <span>${basketItem.amount}</span>
                 <button class="add_amount_bsk" onclick="addToBasket(${dish.id})">+</button>
                 </div>

@@ -40,7 +40,7 @@ function renderTotal() {
   document.getElementById("total").innerText = "Total: " + total.toFixed(2) + " €";
 }
 
-function showPlus(dishId) {
+function updateDishUIAfterIncrease(dishId) {
   let plusBtn = document.getElementById("plus_btn" + dishId);
   let addBtn = document.getElementById("add_btn" + dishId);
 
@@ -58,7 +58,7 @@ function showPlus(dishId) {
 }
 
 
-function showMinus(dishId) {
+function updateDishUIAfterDecrease(dishId) {
   let i = getBasketIndexById(dishId);
   let addBtn = document.getElementById("add_btn" + dishId);
   let plusBtn = document.getElementById("plus_btn" + dishId);
@@ -89,10 +89,10 @@ function addToBasket(id) {
   else basket[basketId].amount++;
 
   renderBasket();
-  showPlus(id);
+  updateDishUIAfterIncrease(id);
 }
 
-function reduceBasket(id) {
+function decreaseDishAmount(id) {
   let basketId = getBasketIndexById(id);
   if (basketId === -1) return;
 
@@ -100,7 +100,7 @@ function reduceBasket(id) {
   if (basket[basketId].amount === 0) basket.splice(basketId, 1);
 
   renderBasket();
-  showMinus(id);
+  updateDishUIAfterDecrease(id);
 }
 
 function renderBasket() {
@@ -185,9 +185,7 @@ function buyNow() {
   dialog.showModal();
 }
 
-function closeDialog(event) {
-  event.preventDefault();
-  event.stopPropagation();
+function closeDialog() {
   let dialog = document.getElementById("order_confirmed");
   dialog.close();
 }
@@ -204,23 +202,34 @@ function resetAddButtons() {
 }
 
 function scrollBehavior() {
-  let scrollY = window.scrollY;
-  let startPosition = 480;
+  const basket = document.querySelector(".basket_overlay");
+  if (!basket) return;
+
+  const scrollY = window.scrollY;
+  const startPosition = 480;
   let newPosition = startPosition - scrollY;
 
   if (window.innerWidth <= 1180) {
-    basketEl.style.transform = "none";
+    basket.style.transform = "none";
     return;
   }
 
-  if (newPosition < 0) {
-    newPosition = 0;
-  }
+  if (newPosition < 0) newPosition = 0;
 
-  let basket = document.querySelector(".basket_overlay");
-  basket.style.transform = "translateY(" + newPosition + "px)";
+  basket.style.transform = `translateY(${newPosition}px)`;
 }
 
 if (window.innerWidth > 1180) {
   window.addEventListener("scroll", scrollBehavior);
 }
+
+window.addEventListener("resize", () => {
+  const basket = document.querySelector(".basket_overlay");
+  if (!basket) return;
+
+  if (window.innerWidth <= 1180) {
+    basket.style.transform = "none";
+  } else {
+    scrollBehavior();
+  }
+});
