@@ -417,3 +417,7 @@
 .dish_img {
   padding: 10px;
 }
+
+.no-scroll {
+  overflow: auto;
+}

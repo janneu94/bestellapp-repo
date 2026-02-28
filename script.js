@@ -208,6 +208,11 @@ function scrollBehavior() {
   let startPosition = 480;
   let newPosition = startPosition - scrollY;
 
+  if (window.innerWidth <= 1180) {
+    basketEl.style.transform = "none";
+    return;
+  }
+
   if (newPosition < 0) {
     newPosition = 0;
   }
@@ -216,4 +221,6 @@ function scrollBehavior() {
   basket.style.transform = "translateY(" + newPosition + "px)";
 }
 
-window.addEventListener("scroll", scrollBehavior);
+if (window.innerWidth > 1180) {
+  window.addEventListener("scroll", scrollBehavior);
+}
