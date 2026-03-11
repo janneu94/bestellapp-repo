@@ -110,10 +110,7 @@
 .footer_links a {
   color: white;
   text-decoration: none;
-}
-
-.footer_links a:hover {
-  text-decoration: underline;
+  cursor: default;
 }
 
 .main_img_container {
@@ -199,6 +196,7 @@
   width: 30px;
   height: 30px;
   display: block;
+  position: relative;
 
   background-size: contain;
   background-repeat: no-repeat;
@@ -422,5 +420,47 @@
 }
 
 .no-scroll {
-  overflow: auto;
+  overflow: hidden;
+}
+
+#basketcounter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+
+  border-radius: 100px;
+  background-color: #E76C1F;
+  color: white;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.basket_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete_btn {
+  width: 18px;
+  height: 18px;
+  border: none;
+  cursor: pointer;
+
+  background-image: url("assets/img/delete_default.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-color: transparent;
 }

@@ -38,17 +38,31 @@ function getDishHTML(index) {
 
 function getBasketHTML(dish, basketItem) {
   return `
-            <div class="basket_item">
-                <span>${dish.name}</span>
-                <div class="basket_numbers">
-                <div class="number_interface_basket">
-                <button id="minus_btn_${dish.id}" class="reduce_amount_bsk" onclick="decreaseDishAmount(${dish.id})">-</button>
-                <span>${basketItem.amount}</span>
-                <button class="add_amount_bsk" onclick="addToBasket(${dish.id})">+</button>
-                </div>
-                <span>${dish.price.toFixed(2)} €</span>
-                </div>           
-            </div>
+<div class="basket_item">
+
+    <div class="basket_top">
+        <p>${dish.name}</p>
+
+        <button class="delete_btn"
+            onclick="removeDishFromBasket(${dish.id})">
+        </button>
+
+    </div>
+
+    <div class="basket_numbers">
+        <button onclick="decreaseDishAmount(${dish.id})" 
+        id="minus_btn_${dish.id}" 
+        class="reduce_amount_bsk"></button>
+
+        <span>${basketItem.amount}</span>
+
+        <button onclick="addToBasket(${dish.id})" 
+        class="add_amount_bsk">+</button>
+
+        <span class="price">${dish.price.toFixed(2)} €</span>
+    </div>
+
+</div>
         `;
 }
 

@@ -88,16 +88,18 @@
     </main>
     <footer class="hide_mobile">
         <div class="footer_links">
-            <a href="">© 2026 Burgerhouse</a>
-            <a href="">Imprint</a>
-            <a href="">Cookie Preferences</a>
+            <a href="javascript:void(0);">© 2026 Burgerhouse</a>
+            <a href="javascript:void(0);">Imprint</a>
+            <a href="javascript:void(0);">Cookie Preferences</a>
         </div>
     </footer>
 
     <div class="mobile_footer show_mobile">
         <div class="mobile_menu">
             <button onclick="" class="m_btn_home mobile_btn"></button>
-            <button onclick="toggleBasket()" class="m_btn_basket mobile_btn"></button>
+            <button onclick="toggleBasket()" class="m_btn_basket mobile_btn">
+                <span id="basketcounter">0</span>
+            </button>
             <button onclick="" class="m_btn_orders mobile_btn"></button>
             <button onclick="" class="m_btn_profile mobile_btn"></button>
         </div>
@@ -125,7 +127,7 @@
 
     <dialog id="order_confirmed" class="order_confirmed">
         <div class="order_confirmed_content">
-            <button id="close_btn" class="close_btn" onclick="closeDialog(event)"></button>
+            <button id="close_btn" class="close_btn" onclick="closeDialog()"></button>
             <img src="assets/img/deliver_car.png" alt="deliver_car">
             <h3>Order confirmed!</h3>
             <p>Your food is on the way!</p>
@@ -135,5 +137,3 @@
 </body>
 
 </html>
-
-

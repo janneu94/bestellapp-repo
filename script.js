@@ -116,8 +116,9 @@ function renderBasket() {
   } else {
     renderBasketItems(showBasket);
   }
-
+  
   renderTotal();
+  setBasketCount();
 }
 
 function toggleBasketUI(isEmpty) {
@@ -180,6 +181,7 @@ function buyNow() {
 
   basketOverlay.classList.remove("open");
   mobileBtn.classList.remove("active");
+  document.body.classList.remove("no-scroll");
 
   let dialog = document.getElementById("order_confirmed");
   dialog.showModal();
@@ -233,3 +235,33 @@ window.addEventListener("resize", () => {
     scrollBehavior();
   }
 });
+
+function setBasketCount() {
+  let count = 0;
+
+  for (let item of basket) {
+    count += item.amount;
+  }
+
+  let countRef = document.getElementById("basketcounter");
+  if (!countRef) return;
+
+  countRef.innerText = count;
+
+  if (count === 0) {
+    countRef.style.display = "none";
+  } else {
+    countRef.style.display = "flex";
+  }
+}
+
+function removeDishFromBasket(dishId) {
+  let basketIndex = getBasketIndexById(dishId);
+
+  if (basketIndex === -1) return;
+
+  basket.splice(basketIndex, 1);
+
+  renderBasket();
+  updateDishUIAfterDecrease(dishId);
+}
