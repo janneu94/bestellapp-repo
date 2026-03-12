@@ -4,15 +4,19 @@
     display: none;
   }
 
-  .menu {
+   .menu {
+    width: 100%;
     margin: 0;
+    box-sizing: border-box;
   }
 
   .order_section {
     flex-direction: column;
-    justify-items: center;
     align-items: center;
     margin-bottom: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
   }
 
   .show_mobile {
@@ -45,9 +49,9 @@
   }
 
   .basket_content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
   }
 
   #basket {
@@ -58,16 +62,16 @@
   }
 
   .basket_item {
-    width: auto;
-    padding: 12px 84px;
+    width: 100%;
+    padding: 12px 16px;
     box-sizing: border-box;
     overflow-x: hidden;
   }
 
   .food_card {
-    width: 700px;
-    margin-right: 0;
-    flex-direction: row !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   #total {
@@ -84,12 +88,15 @@
 
   .basket_content {
     width: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin: 0;
+    box-sizing: border-box;
   }
 
   #basket {
     width: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -106,8 +113,8 @@
   }
 
   .menu {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 
 }
@@ -129,4 +136,4 @@
   .basket_item {
     padding: 6px 24px;
   }
-} 
+}

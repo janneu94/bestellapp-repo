@@ -50,6 +50,7 @@ function getBasketHTML(dish, basketItem) {
     </div>
 
     <div class="basket_numbers">
+        <div class="left_basket_number_section">
         <button onclick="decreaseDishAmount(${dish.id})" 
         id="minus_btn_${dish.id}" 
         class="reduce_amount_bsk"></button>
@@ -58,7 +59,7 @@ function getBasketHTML(dish, basketItem) {
 
         <button onclick="addToBasket(${dish.id})" 
         class="add_amount_bsk">+</button>
-
+        </div>
         <span class="price">${dish.price.toFixed(2)} €</span>
     </div>
 

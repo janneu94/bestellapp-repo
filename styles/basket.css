@@ -29,7 +29,7 @@
 
 .basket_numbers {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -96,5 +96,12 @@
 
 .number_interface_basket {
   display: flex;
+  align-items: center;
+}
+
+.left_basket_number_section {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
   align-items: center;
 }

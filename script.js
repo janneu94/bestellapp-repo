@@ -75,11 +75,11 @@ function updateDishUIAfterDecrease(dishId) {
 }
 
 function getDishById(id) {
-  return myDishes.find(a => a.id === id);
+  return myDishes.find(dish => dish.id === id);
 }
 
 function getBasketIndexById(dishId) {
-  return basket.findIndex(b => b.dishId === dishId);
+  return basket.findIndex(basketItem => basketItem.dishId === dishId);
 }
 
 function addToBasket(id) {
