@@ -465,3 +465,15 @@
 
   background-color: transparent;
 }
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.no-transform {
+  transform: none;
+}

@@ -116,7 +116,7 @@ function renderBasket() {
   } else {
     renderBasketItems(showBasket);
   }
-  
+
   renderTotal();
   setBasketCount();
 }
@@ -126,11 +126,15 @@ function toggleBasketUI(isEmpty) {
   let separator = document.querySelector(".seperator");
   let total = document.getElementById("total");
 
-  let display = isEmpty ? "none" : "block";
-
-  buyBtn.style.display = display;
-  separator.style.display = display;
-  total.style.display = display;
+if (basket.length === 0) {
+  buyBtn.classList.add("hidden");
+  separator.classList.add("hidden");
+  total.classList.add("hidden");
+} else {
+  buyBtn.classList.remove("hidden");
+  separator.classList.remove("hidden");
+  total.classList.remove("hidden");
+}
 }
 
 function renderBasketItems(container) {
@@ -212,8 +216,10 @@ function scrollBehavior() {
   let newPosition = startPosition - scrollY;
 
   if (window.innerWidth <= 1180) {
-    basket.style.transform = "none";
+    basket.classList.add("no-transform");
     return;
+  } else {
+    basket.classList.remove("no-transform");
   }
 
   if (newPosition < 0) newPosition = 0;
@@ -230,8 +236,9 @@ window.addEventListener("resize", () => {
   if (!basket) return;
 
   if (window.innerWidth <= 1180) {
-    basket.style.transform = "none";
+    basket.classList.add("no-transform");
   } else {
+    basket.classList.remove("no-transform");
     scrollBehavior();
   }
 });
@@ -249,9 +256,11 @@ function setBasketCount() {
   countRef.innerText = count;
 
   if (count === 0) {
-    countRef.style.display = "none";
+    countRef.classList.add("hidden");
+    countRef.classList.remove("flex");
   } else {
-    countRef.style.display = "flex";
+    countRef.classList.remove("hidden");
+    countRef.classList.add("flex");
   }
 }
 
