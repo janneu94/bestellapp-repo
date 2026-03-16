@@ -103,14 +103,13 @@
 @media (max-width: 780px) {
 
   .food_card {
-    /* 'flex-direction: column !important;' */
     width: auto;
   }
 
-  .order_section {
+  /* .order_section {
     padding-left: 0px;
     margin-right: 0px;
-  }
+  } */
 
   .menu {
     margin-left: 16px;
@@ -135,5 +134,11 @@
 @media (max-width: 480px) {
   .basket_item {
     padding: 6px 24px;
+  }
+}
+
+@media (max-width: 350px) {
+  .shop_name {
+    gap: 25px;
   }
 }

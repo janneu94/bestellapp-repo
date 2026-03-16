@@ -5,7 +5,6 @@ let basket = [];
 function init() {
   render();
   renderBasket();
-  scrollBehavior();
 }
 
 function render() {
@@ -59,18 +58,18 @@ function updateDishUIAfterIncrease(dishId) {
 
 
 function updateDishUIAfterDecrease(dishId) {
-  let i = getBasketIndexById(dishId);
+  let index = getBasketIndexById(dishId);
   let addBtn = document.getElementById("add_btn" + dishId);
   let plusBtn = document.getElementById("plus_btn" + dishId);
 
   if (!addBtn || !plusBtn) return;
 
-  if (i == -1) {
+  if (index == -1) {
     plusBtn.classList.remove("visible");
     addBtn.classList.remove("add_btn_clicked");
     addBtn.innerHTML = "";
   } else {
-    addBtn.innerHTML = "added " + basket[i].amount;
+    addBtn.innerHTML = "added " + basket[index].amount;
   }
 }
 
@@ -206,42 +205,6 @@ function resetAddButtons() {
     btn.classList.remove("visible");
   });
 }
-
-function scrollBehavior() {
-  const basket = document.querySelector(".basket_overlay");
-  if (!basket) return;
-
-  const scrollY = window.scrollY;
-  const startPosition = 480;
-  let newPosition = startPosition - scrollY;
-
-  if (window.innerWidth <= 1180) {
-    basket.classList.add("no-transform");
-    return;
-  } else {
-    basket.classList.remove("no-transform");
-  }
-
-  if (newPosition < 0) newPosition = 0;
-
-  basket.style.transform = `translateY(${newPosition}px)`;
-}
-
-if (window.innerWidth > 1180) {
-  window.addEventListener("scroll", scrollBehavior);
-}
-
-window.addEventListener("resize", () => {
-  const basket = document.querySelector(".basket_overlay");
-  if (!basket) return;
-
-  if (window.innerWidth <= 1180) {
-    basket.classList.add("no-transform");
-  } else {
-    basket.classList.remove("no-transform");
-    scrollBehavior();
-  }
-});
 
 function setBasketCount() {
   let count = 0;
